@@ -35,7 +35,7 @@ resetBtn.addEventListener("click", resetGame);
 gameStart();
 async function gameStart() {
     running = true;
-    scoreValue.style.color = "gray";
+    scoreValue.style.color = "lightGray";
     scoreValue.textContent = score;
     await initializeGame(); // Wait for initialization to complete
     drawFruit();
@@ -90,7 +90,7 @@ function moveSnake() {
     if (snake.snakeBody[0].x === apple.position.x && snake.snakeBody[0].y === apple.position.y) {
         snake.eat();
         score += 1;
-        scoreValue.style.color = "gray";
+        scoreValue.style.color = "lightGray";
         scoreValue.textContent = score;
         createFruit();
     } else {
@@ -189,9 +189,10 @@ function displayGameOver() {
     resetBtn.textContent = "Try Again";
     resetBtn.classList.remove("invisible");
     resetBtn.style.backgroundColor = "red";
+    resetBtn.style.color = "white";
     resetBtn.style.position = "absolute";
     resetBtn.style.width = "110px";
-    resetBtn.style.top = "50%";
+    resetBtn.style.top = "37%";
     resetBtn.style.left = "50%";
     resetBtn.style.transform = "translate(-50%, -50%)";
 }
@@ -201,7 +202,7 @@ function resetGame() {
     score = 0;
     xVelocity = unitSize;
     yVelocity = 0;
-    scoreValue.style.color = "gray";
+    scoreValue.style.color = "white";
     resetBtn.classList.remove("gameOver");
     resetBtn.textContent = "Réinitialiser";
     if (!running) {
