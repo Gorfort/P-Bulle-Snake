@@ -10,7 +10,7 @@ const ctx = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
 const scoreValue = document.querySelector("#scoreValue");
 const resetBtn = document.querySelector("#resetBtn");
-const gameWidth = gameBoard.width;
+const gameWidth = gameBoard.width; 
 const gameHeight = gameBoard.height;
 const boardBackground = "#555555";
 const snakeColor = "#00b30f";
@@ -176,7 +176,7 @@ function checkGameOver() {
 }
  
 // Function to display the game over screen
-function displayGameOver() {
+function displayGameOver() {-
     clearGame();
     ctx.font = "50px 'Designer', sans-serif";
     ctx.fillStyle = "Black";
