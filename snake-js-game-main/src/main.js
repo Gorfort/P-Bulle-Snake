@@ -4,7 +4,7 @@
 // Lieu : ETML, Sébeillon
 // Date : 05.12.23
  
-// Constants
+// Constantes
 const gameBoard = document.querySelector("#gameBoard");
 const ctx = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
@@ -26,23 +26,23 @@ let score = 0;
 let apple;
 let snake;
  
-// Event listeners for keyboard and reset button
+// Event listeners pour le clavier et le bouton reset
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
  
-// Function to start the game
-// Function to start the game
+
+// Fonction pour lancer le jeu
 gameStart();
 async function gameStart() {
     running = true;
     scoreValue.style.color = "lightGray";
     scoreValue.textContent = score;
-    await initializeGame(); // Wait for initialization to complete
+    await initializeGame(); // Attentde de l'initialization
     drawFruit();
     nextTick();
 }
  
-// Updated function to initialize game components
+// Fonction mise à jour pour initialiser les compostants du jeu
 async function initializeGame() {
     const AppleModule = await import('./apple.js');
     const SnakeModule = await import('./snake.js');
@@ -50,7 +50,7 @@ async function initializeGame() {
     apple = new AppleModule.default(unitSize, gameWidth, gameHeight);
     snake = new SnakeModule.default(unitSize, 5);
 }
-// Game cycle function
+// Fonction de cycles du jeu
 function nextTick() {
     if (running) {
         setTimeout(() => {
@@ -66,27 +66,27 @@ function nextTick() {
     }
 }
  
-// Function to clear the game board
+// Function pour clear le jeu
 function clearGame() {
     ctx.fillStyle = boardBackground;
     ctx.fillRect(0, 0, gameWidth, gameHeight);
 }
  
-// Function to create a new position for fruit
+// Function qui crée une nouvelle position pour le fruit 
 function createFruit() {
     apple.position = apple.createRandomPosition();
 }
  
-// Function to draw the fruit
+// Function qui dessine le fruit
 function drawFruit() {
     apple.draw(ctx, foodColor);
 }
  
-// Function to move the snake
+// Function pour faire bouger le snake
 function moveSnake() {
     snake.move(xVelocity, yVelocity);
  
-    // If the snake eats a fruit
+    // Si le snake mange un fruit
     if (snake.snakeBody[0].x === apple.position.x && snake.snakeBody[0].y === apple.position.y) {
         snake.eat();
         score += 1;
@@ -98,15 +98,15 @@ function moveSnake() {
     }
 }
  
-// Function to draw the snake
+// Function pour dessiner le Snake
 function drawSnake() {
     snake.draw(ctx, snakeColor, snakeBorder);
 }
  
-// Variable to avoid rapid direction changes
+// Variable pour éviter les changements de directions trop rapide
 let changingDirection = false;
  
-// Function to handle direction changes
+// Function qui s'occupe des changements de direction
 function changeDirection(event) {
     if (changingDirection) return;
     changingDirection = true;
@@ -117,22 +117,22 @@ function changeDirection(event) {
     const isGoingLeft = xVelocity === -unitSize;
  
     switch (keyPressed) {
-        case 37: // LEFT
+        case 37: // GAUCHE
             if (!isGoingRight && !isGoingLeft) {
                 setDirection(-unitSize, 0);
             }
             break;
-        case 38: // UP
+        case 38: // HAUT
             if (!isGoingDown && !isGoingUp) {
                 setDirection(0, -unitSize);
             }
             break;
-        case 39: // RIGHT
+        case 39: // DROITE
             if (!isGoingLeft && !isGoingRight) {
                 setDirection(unitSize, 0);
             }
             break;
-        case 40: // DOWN
+        case 40: // BAS
             if (!isGoingUp && !isGoingDown) {
                 setDirection(0, unitSize);
             }
@@ -144,23 +144,23 @@ function changeDirection(event) {
     }, 5);
 }
  
-// Function to set the direction of the snake
+// Fonction qui Set la direction du Snake
 function setDirection(newXVelocity, newYVelocity) {
     xVelocity = newXVelocity;
     yVelocity = newYVelocity;
 }
  
-// Function to check if the game is over
+// Fonction qui check si la partie est perdue
 function checkGameOver() {
     switch (true) {
-        // If the snake hits a wall
+        // Si le Snake touche un mur
         case snake.snakeBody[0].x < 0:
         case snake.snakeBody[0].x >= gameWidth:
         case snake.snakeBody[0].y < 0:
         case snake.snakeBody[0].y >= gameHeight:
             running = false;
             break;
-        // If the snake hits its own body with its head
+        // Si le snake touche son propre corps
         default:
             for (let i = 1; i < snake.snakeBody.length; i += 1) {
                 if (
@@ -175,7 +175,7 @@ function checkGameOver() {
     }
 }
  
-// Function to display the game over screen
+// Fonction qui Display le Game Over
 function displayGameOver() {-
     clearGame();
     ctx.font = "50px 'Designer', sans-serif";
@@ -184,7 +184,7 @@ function displayGameOver() {-
     ctx.fillText("GAME OVER", gameWidth / 2, gameHeight / 2);
     running = false;
  
-    // Styling of the "Try Again" button
+    // Style du bouton "Try Again"
     resetBtn.classList.add("gameOver");
     resetBtn.textContent = "Try Again";
     resetBtn.classList.remove("invisible");
@@ -197,14 +197,14 @@ function displayGameOver() {-
     resetBtn.style.transform = "translate(-50%, -50%)";
 }
  
-// Function to reset the game
+// Fonction pour reset le jeu
 function resetGame() {
     score = 0;
     xVelocity = unitSize;
     yVelocity = 0;
     scoreValue.style.color = "white";
     resetBtn.classList.remove("gameOver");
-    resetBtn.textContent = "Réinitialiser";
+    resetBtn.textContent = "";
     if (!running) {
         resetBtn.classList.add("invisible");
     }
