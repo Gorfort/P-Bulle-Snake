@@ -27,7 +27,7 @@ export default class Snake {
         let hue = 0;
         this.snakeBody.forEach((snakePart, index) => {
             // Change colors of the snake
-            hue = (hue + 5) % 360;
+            hue = (hue + 3) % 360;
             const color = `hsl(${hue}, 100%, 50%)`;
             ctx.fillStyle = color;
             ctx.strokeStyle = snakeBorder;
