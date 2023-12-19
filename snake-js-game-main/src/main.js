@@ -90,7 +90,6 @@ function moveSnake() {
  
     // Si le snake mange un fruit
     if (snake.snakeBody[0].x === apple.position.x && snake.snakeBody[0].y === apple.position.y) {
-        snake.eat();
         score += 1;
         scoreValue.style.color = "lightGray";
         scoreValue.textContent = score;
