@@ -26,11 +26,7 @@ export default class Snake {
         // Ajoute la nouvelle tête à l'avant du corps du serpent
         this.snakeBody.unshift(head);
     }
-
-    eat() {
-        // Logique pour manger la nourriture
-    }
-
+    
     // Dessine le serpent sur le jeu
     draw(ctx, snakeColor, snakeBorder) {
         let hue = 0;  // Initialise la teinte du Snake
