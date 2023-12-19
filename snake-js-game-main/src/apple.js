@@ -1,3 +1,11 @@
+// Projet : P_Bulles Snake
+// Auteur : Thibaud Racine
+// Classe : CID2A
+// Lieu : ETML, Sébeillon
+// Date : 05.12.23
+// Fichier : Apple.js
+// Description : Classe qui s'occupe de toutes les fonctions du fruit.
+ 
 export default class Apple {
     // Constructeur pour initialiser l'objet Apple
     constructor(unitSize, gameWidth, gameHeight) {

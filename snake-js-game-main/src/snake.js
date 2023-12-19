@@ -1,3 +1,11 @@
+// Projet : P_Bulles Snake
+// Auteur : Thibaud Racine
+// Classe : CID2A
+// Lieu : ETML, Sébeillon
+// Date : 05.12.23
+// Fichier : Snake.js
+// Description : Classe qui s'occupe de toutes les fonctions du Snake.
+ 
 export default class Snake {
     // Fonction constructeur pour initialiser l'objet Snake
     constructor(unitSize, initialLength) {

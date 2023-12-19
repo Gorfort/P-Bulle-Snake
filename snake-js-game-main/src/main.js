@@ -3,7 +3,9 @@
 // Classe : CID2A
 // Lieu : ETML, Sébeillon
 // Date : 05.12.23
- 
+// Fichier : Main.js
+// Description : Game Engine du Snake.
+
 // Constantes
 const gameBoard = document.querySelector("#gameBoard");
 const ctx = gameBoard.getContext("2d");
@@ -192,7 +194,7 @@ function displayGameOver() {-
     resetBtn.style.color = "white";
     resetBtn.style.position = "absolute";
     resetBtn.style.width = "110px";
-    resetBtn.style.top = "37%";
+    resetBtn.style.top = "340px";
     resetBtn.style.left = "50%";
     resetBtn.style.transform = "translate(-50%, -50%)";
 }
