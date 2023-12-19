@@ -20,7 +20,7 @@ export default class Apple {
         console.log(`Position de la pomme = X: ${this.position.x} | Y: ${this.position.y}`);
     }
 
-    // Crée  une position aléatoire pour la pomme dans les limites du jeu
+    // Crée une position aléatoire pour la pomme dans les limites du jeu
     createRandomPosition() {
         const x = this.randomNumber(0, this.gameWidth - this.unitSize);
         const y = this.randomNumber(0, this.gameHeight - this.unitSize);

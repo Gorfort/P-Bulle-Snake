@@ -54,7 +54,7 @@ async function initializeGame() {
 
 // Fonction de cycles du jeu
 function nextTick() {
-    if (running) {
+    if (running) { // Si le jeu tourne
         setTimeout(() => {
             clearGame();
             drawFruit();
@@ -79,7 +79,7 @@ function createFruit() {
     apple.position = apple.createRandomPosition();
 }
  
-// Function qui dessine le fruit
+// Dessine le fruit
 function drawFruit() {
     apple.draw(ctx, foodColor);
 }
@@ -100,7 +100,7 @@ function moveSnake() {
     }
 }
  
-// Function pour dessiner le Snake
+// Dessine le Snake
 function drawSnake() {
     snake.draw(ctx, snakeColor, snakeBorder);
 }
@@ -108,7 +108,7 @@ function drawSnake() {
 // Variable pour éviter les changements de directions trop rapide
 let changingDirection = false;
  
-// Function qui s'occupe des changements de direction
+// S'occupe des changements de direction
 function changeDirection(event) {
     if (changingDirection) return;
     changingDirection = true;
@@ -146,13 +146,13 @@ function changeDirection(event) {
     }, 5);
 }
  
-// Fonction qui Set la direction du Snake
+// Set la direction du Snake
 function setDirection(newXVelocity, newYVelocity) {
     xVelocity = newXVelocity;
     yVelocity = newYVelocity;
 }
  
-// Fonction qui check si la partie est perdue
+// Check si la partie est perdue
 function checkGameOver() {
     switch (true) {
         // Si le Snake touche un mur
@@ -177,7 +177,7 @@ function checkGameOver() {
     }
 }
  
-// Fonction qui Display le Game Over
+// Display le Game Over
 function displayGameOver() {-
     clearGame();
     ctx.font = "50px 'Designer', sans-serif";
@@ -199,7 +199,7 @@ function displayGameOver() {-
     resetBtn.style.transform = "translate(-50%, -50%)";
 }
  
-// Fonction pour reset le jeu
+// Reset le jeu
 function resetGame() {
     score = 0;
     xVelocity = unitSize;
