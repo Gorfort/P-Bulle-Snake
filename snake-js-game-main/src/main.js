@@ -32,7 +32,7 @@ let snake;
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
 
-// Fonction pour lancer le jeu
+// Lancer le jeu
 gameStart();
 async function gameStart() {
     running = true;
@@ -43,7 +43,7 @@ async function gameStart() {
     nextTick();
 }
  
-// Fonction mise à jour pour initialiser les compostants du jeu
+// Mise à jour pour initialiser les compostants du jeu
 async function initializeGame() {
     const AppleModule = await import('./apple.js');
     const SnakeModule = await import('./snake.js');
@@ -52,7 +52,7 @@ async function initializeGame() {
     snake = new SnakeModule.default(unitSize, 5);
 }
 
-// Fonction de cycles du jeu
+// Cycles du jeu
 function nextTick() {
     if (running) { // Si le jeu tourne
         setTimeout(() => {
@@ -68,7 +68,7 @@ function nextTick() {
     }
 }
  
-// Function pour clear le jeu
+// Clear le jeu
 function clearGame() {
     ctx.fillStyle = boardBackground;
     ctx.fillRect(0, 0, gameWidth, gameHeight);
