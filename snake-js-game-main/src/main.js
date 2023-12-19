@@ -31,7 +31,6 @@ let snake;
 // Event listeners pour le clavier et le bouton reset
 window.addEventListener("keydown", changeDirection);
 resetBtn.addEventListener("click", resetGame);
- 
 
 // Fonction pour lancer le jeu
 gameStart();
@@ -52,6 +51,7 @@ async function initializeGame() {
     apple = new AppleModule.default(unitSize, gameWidth, gameHeight);
     snake = new SnakeModule.default(unitSize, 5);
 }
+
 // Fonction de cycles du jeu
 function nextTick() {
     if (running) {
@@ -74,7 +74,7 @@ function clearGame() {
     ctx.fillRect(0, 0, gameWidth, gameHeight);
 }
  
-// Function qui crée une nouvelle position pour le fruit 
+// Crée une nouvelle position pour le fruit 
 function createFruit() {
     apple.position = apple.createRandomPosition();
 }
@@ -84,7 +84,7 @@ function drawFruit() {
     apple.draw(ctx, foodColor);
 }
  
-// Function pour faire bouger le snake
+// Faire bouger le snake
 function moveSnake() {
     snake.move(xVelocity, yVelocity);
  
