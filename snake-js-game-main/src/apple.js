@@ -31,7 +31,7 @@ export default class Apple {
     draw(ctx, color) {
         ctx.fillStyle = color;  // Définit la couleur pour la pomme
         ctx.fillRect(this.position.x, this.position.y, this.unitSize, this.unitSize);
-        apple.logPosition();
+        apple.logPosition(); //Log la position de la nouvelle pomme
     }
 
     // Génère un nombre aléatoire
