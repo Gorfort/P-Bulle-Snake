@@ -111,7 +111,9 @@ function drawSnake() {
 // Variable pour éviter les changements de directions trop rapide
 let changingDirection = false;
 
-// S'occupe des changements de direction
+/**
+ *  S'occupe des changements de direction
+ **/ 
 function changeDirection(event) {
   if (changingDirection) return;
   changingDirection = true;
