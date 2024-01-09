@@ -35,7 +35,7 @@ export default class Snake {
     let hue = 0; // Initialise la teinte du Snake
     this.snakeBody.forEach((snakePart, index) => {
       // Change les couleurs du serpent
-      hue = (hue + 3) % 360; // Change le gradient de 3 du snake à chaque fruit mangé
+      hue = (hue + 5) % 360; // Change le gradient de 3 du snake à chaque fruit mangé
       const color = `hsl(${hue}, 100%, 50%)`;
       ctx.fillStyle = color;
       ctx.strokeStyle = snakeBorder;

@@ -1,32 +1,34 @@
 @font-face {
-  font-family: 'Designer';
-  src: url(../Fonts/Designer.otf) format('truetype');
+  font-family: "Designer";
+  src: url(../Fonts/Designer.otf) format("truetype");
 }
 
-body{
+body {
   display: flex;
   justify-content: center;
-  font-family: 'Designer', sans-serif;
+  font-family: "Designer", sans-serif;
   background-color: rgb(48, 48, 48);
 }
-#gameContainer{
-  text-align:center;
+#gameContainer {
+  text-align: center;
 }
-#gameBoard{
+#gameBoard {
   border: 5px solid;
   border-radius: 15px;
   background-color: #555555;
 }
 
-#scoreText{
+#scoreText {
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding-left: 50px;
   font-weight: bold;
-  font-family: 'Designer';
-  font-size:30px ;
+  font-family: "Designer";
+  font-size: 30px;
 }
 
-#resetBtn{
-  font-family: 'Designer';
+#resetBtn {
+  font-family: "Designer";
   letter-spacing: 1px;
   font-weight: lighter;
   font-size: 15px;
@@ -36,33 +38,33 @@ body{
   border-radius: 10px;
   cursor: pointer;
 }
-#resetBtn.invisible{
+#resetBtn.invisible {
   display: none;
 }
 
-#screen{
+#screen {
   background-color: rgb(66, 66, 66);
   border: 5px solid;
   border-radius: 15px;
   width: 600px;
   height: 600px;
 }
-#contenu{
+#contenu {
   display: flex;
   justify-content: space-between;
   padding-right: 50px;
   align-items: center;
 }
 
-button{
+button {
   font-weight: bold;
   background-color: rgb(66, 66, 66);
 }
 
-.gameOverText{
-  font-family: 'Courier New', Courier, monospace;
+.gameOverText {
+  font-family: "Courier New", Courier, monospace;
   font-size: 50px;
-  color:black;
+  color: black;
   text-align: center;
   margin-top: 20px;
 }

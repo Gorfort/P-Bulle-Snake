@@ -197,7 +197,7 @@ function displayGameOver() {
   resetBtn.style.color = "white";
   resetBtn.style.position = "absolute";
   resetBtn.style.width = "110px";
-  resetBtn.style.top = "340px";
+  resetBtn.style.top = "345px";
   resetBtn.style.left = "50%";
   resetBtn.style.transform = "translate(-50%, -50%)";
 }
